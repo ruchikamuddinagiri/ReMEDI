@@ -14,17 +14,13 @@ export default function Home() {
     let utterance = new SpeechSynthesisUtterance(hey);
 	speechSynthesis.speak(utterance);
  
-    // if (response.ok) {
-    //   router.push('/signup/api')
-    // } else {
-    //   // Handle errors
-    // }
+
   }
  
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="tellme" placeholder="Speak goddamn it!!!" required />
-      <button type="submit">Go</button>
-    </form>
+	<form action="upload/api" method="post" enctype="multipart/form-data">
+	  <input id="file" name="file" type="file" />
+	  <button>Upload</button>
+	</form>
   )
 }

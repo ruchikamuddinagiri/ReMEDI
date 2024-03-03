@@ -14,11 +14,7 @@ export default function Home() {
     let utterance = new SpeechSynthesisUtterance(hey);
 	speechSynthesis.speak(utterance);
  
-    // if (response.ok) {
-    //   router.push('/signup/api')
-    // } else {
-    //   // Handle errors
-    // }
+
   }
  
   return (
