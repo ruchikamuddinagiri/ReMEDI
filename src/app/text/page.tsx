@@ -55,21 +55,45 @@ const Page: React.FC = () => {
     }
 };
 
+type ColorName = 'White' | 'Light Yellow' | 'Soft Green' | 'Muted Green' | 'Sky Blue' | 'Slate Gray';
+type FontColorName = 'Black' | 'Dark Gray' | 'Medium Gray' | 'Light Gray' | 'Silver';
+
+
+const colorNameToHexMapping: { [key in ColorName]: string } = {
+    'White': '#FFFFFF',
+    'Light Yellow': '#F8DE7E',
+    'Soft Green': '#D1E231',
+    'Sky Blue': '#5BC0EB',
+  };
+  
+  const fontColorNameToHexMapping: { [key in FontColorName]: string } = {
+    'Black': '#000000',
+    'Green': '#800080',
+    'Red': '#FF0000',
+    'Dark Blue': '#00008B',
+    'Maroon': '#800000',
+  };
 
 
   // You can add more options as needed
-  const backgroundOptions = ['#FFFFFF', '#F8DE7E', '#D1E231', '#99C794', '#5BC0EB', '#65737E'];
-  const fontColorOptions = ['#000000', '#333333', '#666666', '#999999', '#CCCCCC'];
-  const fontFamilyOptions = ['OpenDyslexic', 'Arial', 'Verdana'];
+  const backgroundOptions = ['White', 'Light Yellow', 'Soft Green', 'Sky Blue', 'Slate Gray'];
+  const fontColorOptions = ['Black', 'Green', 'Red', 'Dark Blue', 'Maroon'];
+  const fontFamilyOptions = ['OpenDyslexic', 'Arial', 'Verdana', 'Comic Sans MS'];
   const fontSizeOptions = ['12px', '16px', '20px', '24px'];
   const lineSpacingOptions = ['1.4', '1.6', '1.8', '2.0'];
 
-  const handleStyleChange = (optionType: keyof StyleOptions, value: string) => {
-    // Append 'px' only for fontSize option
-    const newValue = optionType === 'fontSize' ? `${value}` : value;
+const handleStyleChange = (optionType: keyof StyleOptions, value: string) => {
+    let newValue = value;
+    if (optionType === 'backgroundColor') {
+        newValue = colorNameToHexMapping[value as ColorName] || styleOptions.backgroundColor;
+      } else if (optionType === 'fontColor') {
+        newValue = fontColorNameToHexMapping[value as FontColorName] || styleOptions.fontColor;
+      } else if (optionType === 'fontSize') {
+        newValue = `${value}`;
+      }
+    
     setStyleOptions(prev => ({ ...prev, [optionType]: newValue }));
   };
-  
 
   return (
     <div className={styles.container}>
@@ -100,8 +124,8 @@ const Page: React.FC = () => {
           <label>
             Background color:
             <select onChange={(e) => handleStyleChange('backgroundColor', e.target.value)}>
-              {backgroundOptions.map(color => (
-                <option key={color} value={color}>{color}</option>
+              {backgroundOptions.map(colorName => (
+                <option key={colorName} value={colorName}>{colorName}</option>
               ))}
             </select>
           </label>
@@ -109,8 +133,8 @@ const Page: React.FC = () => {
           <label>
             Font color:
             <select onChange={(e) => handleStyleChange('fontColor', e.target.value)}>
-              {fontColorOptions.map(color => (
-                <option key={color} value={color}>{color}</option>
+              {fontColorOptions.map(colorName => (
+                <option key={colorName} value={colorName}>{colorName}</option>
               ))}
             </select>
           </label>
