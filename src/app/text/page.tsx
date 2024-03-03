@@ -56,15 +56,17 @@ const Page: React.FC = () => {
 };
 
 type ColorName = 'White' | 'Light Yellow' | 'Soft Green' | 'Muted Green' | 'Sky Blue' | 'Slate Gray';
-type FontColorName = 'Black' | 'Dark Gray' | 'Medium Gray' | 'Light Gray' | 'Silver';
+type FontColorName = 'Black' | 'Dark Gray' | 'Medium Gray' | 'Light Gray' | 'Silver' | 'Green' | 'Red' | 'Dark Blue' | 'Maroon';
 
 
 const colorNameToHexMapping: { [key in ColorName]: string } = {
-    'White': '#FFFFFF',
-    'Light Yellow': '#F8DE7E',
-    'Soft Green': '#D1E231',
-    'Sky Blue': '#5BC0EB',
-  };
+  'White': '#FFFFFF',
+  'Light Yellow': '#F8DE7E',
+  'Soft Green': '#D1E231',
+  'Sky Blue': '#5BC0EB',
+  'Muted Green': '',
+  'Slate Gray': ''
+};
   
   const fontColorNameToHexMapping: { [key in FontColorName]: string } = {
     'Black': '#000000',
@@ -72,6 +74,10 @@ const colorNameToHexMapping: { [key in ColorName]: string } = {
     'Red': '#FF0000',
     'Dark Blue': '#00008B',
     'Maroon': '#800000',
+    'Dark Gray': '',
+    'Medium Gray': '',
+    'Light Gray': '',
+    Silver: ''
   };
 
 
