@@ -1,6 +1,5 @@
 // pages/quiz/[difficulty].tsx
 'use client'
-// pages/quiz/[difficulty].tsx
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import '../../styles/quiz.css'; // Import CSS file for styling
@@ -10,15 +9,15 @@ const QuizPage = () => {
 
   // Mock questions data
   const questions = [
-    { question: 'Question 1?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 0 },
-    { question: 'Question 2?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 1 },
-    { question: 'Question 3?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 2 },
-    { question: 'Question 4?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 3 },
-    { question: 'Question 5?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 0 },
+    { id: 1, question: 'Question 1?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 0 },
+    { id: 2, question: 'Question 2?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 1 },
+    { id: 3, question: 'Question 3?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 2 },
+    { id: 4, question: 'Question 4?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 3 },
+    { id: 5, question: 'Question 5?', options: ['Option A', 'Option B', 'Option C', 'Option D'], correctAnswer: 0 },
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
+  const [userAnswers, setUserAnswers] = useState<Array<number | null>>(Array(questions.length).fill(null));
 
   const handleAnswerSelection = (selectedOptionIndex: number) => {
     const newAnswers = [...userAnswers];
@@ -31,8 +30,7 @@ const QuizPage = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       // Quiz completed
-      // Redirect to result page or display result
-      router.push(`/quiz/results`);
+      router.push(`/pages/results`);
     }
   };
 
@@ -53,3 +51,4 @@ const QuizPage = () => {
 };
 
 export default QuizPage;
+

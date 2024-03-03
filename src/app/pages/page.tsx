@@ -11,13 +11,13 @@ const IndexPage = () => {
     <div className="container">
       <h1>Select Difficulty Level</h1>
       <div className="buttons">
-        <Link className="button" href="/pages/easy"> Easy
+        <Link className="button" href="/pages/comprehension/easy"> Easy
           {/* <a className="button">Easy</a> */}
         </Link>
-        <Link className="button" href="/pages/medium"> Medium
+        <Link className="button" href="/pages/comprehension/medium"> Medium
           {/* <a className="button">Medium</a> */}
         </Link>
-        <Link className="button" href="/pages/hard"> Hard
+        <Link className="button" href="/pages/comprehension/hard"> Hard
           {/* <a className="button">Hard</a> */}
         </Link>
       </div>
