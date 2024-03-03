@@ -3,27 +3,48 @@ import Image from "next/image";
 import "./globals.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
 export default function Home() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(true);
+  useEffect(() => {
+    // Attempt to retrieve the session token from sessionStorage
+    console.log("hi")
+    const sessionToken = sessionStorage.getItem('email');
+    if(sessionToken){
+      setShowModal(false)
+    }
+   console.log('email:', sessionToken);
+  }, []);
+  
+
+   // Empty dependency array ensures this runs once on mount
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setShowModal(false); // Hide modal on form submission
+
     
     // Implement further actions here, like form validation or data submission
     const formData = new FormData(event.currentTarget)
-    const email = formData.get('email')
+
+    const email  = formData.get('email')
     const name = formData.get('name')
     const age = formData.get('age')
+
+    sessionStorage.setItem('email', String(email));
 
     const response = await fetch('/api', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, name, age }),
     })
+
+    router.push('/');
   };
 
   return (
