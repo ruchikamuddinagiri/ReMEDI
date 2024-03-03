@@ -15,7 +15,7 @@
 .textarea {
   width: 100%;
   height: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 2px solid #41e3fc; /* Light blue border */
   /* font-family: 'Arial', sans-serif; */
   font-size: 20px; /* Bigger font size for readability */
@@ -24,10 +24,41 @@
   background-color: #ffffff; /* White background */
   color: #41e3fc; /* Light blue text */
 }
+.textInputContainer {
+    position: relative; /* This will contain the textarea and the button */
+    width: 100%; /* Match the width of the textarea */
+    /* height: 300px;  */
+}
+
+.textToSpeechButton {
+    position: absolute; /* Position the button absolutely within the container */
+    right: 10px; /* 10px from the right */
+    bottom: 25px; /* 10px from the bottom of the textarea */
+    border: none; /* No border for the button */
+    background: none; /* Transparent background */
+    cursor: pointer; /* Cursor pointer on hover */
+    padding: 0; /* No padding */
+    /* Adjust the size if needed, or remove if using Image component */
+    /* width: 24px; 
+    height: 24px;  */
+}
+  
+  /* You can add hover effects or transitions if you like */
+.textToSpeechButton:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Example hover effect */
+}
 
 .textOutput strong {
     display: inline; /* This ensures that <strong> does not create a new line */
   }
+
+.placeholder {
+    color: #c0c0c0; /* Gray color, similar to placeholder text */
+    
+    /* Ensure that the placeholder text does not interfere with actual text. */
+    pointer-events: none;
+    user-select: none;
+}
 
 .controls {
   display: flex;
@@ -56,9 +87,15 @@
   word-break: break-word;
   overflow-wrap: break-word;
   background-color: #fedde9; /* Light pink background */
-  /* font-family: 'Open-Dyslexic', sans-serif; */
-                                                
+  position: relative;                                
 }
+
+.textOutput:empty:before {
+    content: 'Converted text...';
+    display: block;
+    /* Styles to mimic the placeholder */
+    color: #c0c0c0;
+  }
 
 .dropdown {
     margin-bottom: 10px; /* Spacing between dropdowns */
