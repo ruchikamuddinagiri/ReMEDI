@@ -1,25 +1,18 @@
 // pages/index.tsx
-'use client'
-
 import Link from 'next/link';
-import  '../styles/main.css'; // Import CSS file for styling
+import '../styles/main.css'; // Import CSS file for styling
 
 const IndexPage = () => {
-
-
   return (
     <div className="container">
-      <h1>Select Difficulty Level</h1>
+      <p className="exerciseExplanation">
+        This exercise is developed considering the Flesch Grade Level to aid dyslexic users in reading and understanding the content more effectively.
+      </p>
+      <p className="exerciseExplanation2">Select Difficulty Level</p>
       <div className="buttons">
-        <Link className="button" href="/pages/comprehension/easy"> Easy
-          {/* <a className="button">Easy</a> */}
-        </Link>
-        <Link className="button" href="/pages/comprehension/medium"> Medium
-          {/* <a className="button">Medium</a> */}
-        </Link>
-        <Link className="button" href="/pages/comprehension/hard"> Hard
-          {/* <a className="button">Hard</a> */}
-        </Link>
+        <Link className="button" href="/pages/comprehension/easy"> Easy</Link>
+        <Link className="button" href="/pages/comprehension/medium"> Medium</Link>
+        <Link className="button" href="/pages/comprehension/hard"> Hard</Link>
       </div>
     </div>
   );

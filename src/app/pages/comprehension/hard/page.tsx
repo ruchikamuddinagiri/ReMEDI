@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Modal from '../../../components/model'; // Assuming you have a Modal component
-import "../../styles/comp.css"
+import "../../../styles/comp.css"
 
 const TimerPage = () => {
   const router = useRouter();
@@ -41,9 +41,9 @@ const TimerPage = () => {
 
   return (
     <div className="container">
-      <h1>Welcome to the Easy Comprehension!</h1>
-      <p>The water cycle is a continuous process that recycles water on Earth. It starts when the Sun heats up water in rivers, lakes, and oceans, causing it to evaporate and turn into water vapor. This vapor rises into the air and cools down, forming clouds in a process called condensation. When the clouds get heavy, they release the water as rain or snow, which is called precipitation. The water then returns to rivers, lakes, and oceans, starting the cycle all over again. This cycle is crucial because it provides fresh water for plants, animals, and people</p>
-      <p>Seconds Elapsed: {secondsElapsed}</p>
+      <h1>Welcome to the Hard level Comprehension!</h1>
+      <p  className="text-box">The water cycle is a continuous process that recycles water on Earth. It starts when the Sun heats up water in rivers, lakes, and oceans, causing it to evaporate and turn into water vapor. This vapor rises into the air and cools down, forming clouds in a process called condensation. When the clouds get heavy, they release the water as rain or snow, which is called precipitation. The water then returns to rivers, lakes, and oceans, starting the cycle all over again. This cycle is crucial because it provides fresh water for plants, animals, and people.</p>
+      <p className="timer">Seconds Elapsed: {secondsElapsed}</p>
       {showModal && (
         <Modal onClose={handleModalClose} />
       )}

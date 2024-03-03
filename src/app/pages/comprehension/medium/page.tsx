@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Modal from '../../../components/model'; // Assuming you have a Modal component
-import "../../styles/comp.css"
+import "../../../styles/comp.css"
 
 const TimerPage = () => {
   const router = useRouter();
@@ -41,7 +41,7 @@ const TimerPage = () => {
 
   return (
     <div className="container">
-      <h1>Welcome to the Easy Comprehension!</h1>
+      <h1>Welcome to the Medium level Comprehension!</h1>
       <p>A butterfly starts its life as a tiny egg. It hatches into a caterpillar, which eats a lot of leaves. Then, it turns into a pupa, staying inside a chrysalis. After some time, the pupa changes into a beautiful butterfly. This process is called metamorphosis</p>
       <p>Seconds Elapsed: {secondsElapsed}</p>
       {showModal && (

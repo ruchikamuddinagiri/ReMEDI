@@ -1,51 +1,3 @@
-// // pages/quiz/[difficulty].tsx
-// 'use client'
-// import { useState } from 'react';
-// import { useRouter } from 'next/navigation';
-// import '../../styles/quiz.css'; // Import CSS file for styling
-
-// const QuizPage = () => {
-  
-
-//   // Mock questions data
-//   const questions = [
-//     { question: 'Question 1?', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
-//     { question: 'Question 2?', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
-//     { question: 'Question 3?', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
-//     { question: 'Question 4?', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
-//     { question: 'Question 5?', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
-//   ];
-
-//   const [currentQuestion, setCurrentQuestion] = useState(0);
-
-//   const handleNextQuestion = () => {
-//     if (currentQuestion < questions.length - 1) {
-//       setCurrentQuestion(currentQuestion + 1);
-//     } else {
-//       // Quiz completed
-//       // Redirect to result page or do something else
-//     }
-//   };
-
-//   return (
-//     <div className="container">
-//       <h1>Quiz - Easy</h1>
-//       <div className="question">
-//         <p>{questions[currentQuestion].question}</p>
-//         <div className="options">
-//           {questions[currentQuestion].options.map((option, index) => (
-//             <button key={index} className="option">{option}</button>
-//           ))}
-//         </div>
-//       </div>
-//       <button onClick={handleNextQuestion} className="nextButton">Next Question</button>
-//     </div>
-//   );
-// };
-
-// export default QuizPage;
-
-// pages/quiz.tsx
 
 "use client"
 import { useState } from 'react';
@@ -121,9 +73,9 @@ const QuizPage = () => {
 
   return (
     <div className="container">
-      <h1>Quiz</h1>
+      <h1>Test Your Self</h1>
       <div className="question">
-        <p>{questions[currentQuestion].question}</p>
+        <h2>{questions[currentQuestion].question}</h2>
         <div className="options">
           {questions[currentQuestion].options.map((option, index) => (
             <button key={index} className={`option ${userAnswers[currentQuestion] === index ? 'clicked' : ''}`} onClick={() => handleAnswerSelection(index)}>{option}</button>
@@ -132,13 +84,12 @@ const QuizPage = () => {
       </div>
       <button onClick={handleNextQuestion} className="nextButton">Next Question</button>
       {currentQuestion === 4 && (
-        <Link href="/pages"> Levels
-          {/* <a className="button">Levels</a> */}
+        <Link href="/pages">
         </Link>
       )}
-      <Link className="button" href="/pages"> Levels</Link>
+      <Link className="button" href="/pages"> Levels </Link>
       
-      <p>Score: {score}</p>
+      <h1>Score: {score}</h1>
       {/* <button onClick={handleNextQuestion} className="nextButton">{currentQuestion < questions.length - 1 ? 'Next Question' : 'Try Again'}</button> */}
       
     </div>
