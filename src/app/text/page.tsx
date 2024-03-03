@@ -79,7 +79,7 @@ const Page: React.FC = () => {
                 className={styles.textarea}
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
-                placeholder="Paste or type your text here..."
+                placeholder="paste or type your text here..."
             />
             <button 
                     onClick={toggleSpeech}
