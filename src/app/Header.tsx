@@ -3,7 +3,8 @@ import Link from 'next/link';
 const Header = () => {
     return (
       <header style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem', backgroundColor: '#333', color: '#fff' }}>
-        <div style={{ fontSize: '1.5rem' }}>MyWebsite</div>
+        <img src="/logo.png" alt="ReMEDI Logo" style={{ height: '50px'}} />
+        <div style={{ fontSize: '1.5rem' }}>ReMEDI</div>
         <nav>
           <ul style={{ listStyle: 'none', display: 'flex', gap: '20px' }}>
             <li>
@@ -12,13 +13,18 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link style={{ color: '#fff', textDecoration: 'none' }}href="/about">
-                About
+              <Link style={{ color: '#fff', textDecoration: 'none' }}href="/text">
+                Plain Text
               </Link>
             </li>
             <li>
-              <Link style={{ color: '#fff', textDecoration: 'none' }} href="/contact">
-                Contact
+              <Link style={{ color: '#fff', textDecoration: 'none' }} href="/document">
+                Document or Webpage
+              </Link>
+            </li>
+            <li>
+              <Link style={{ color: '#fff', textDecoration: 'none' }} href="/pages">
+                Reading Comprehension
               </Link>
             </li>
           </ul>
