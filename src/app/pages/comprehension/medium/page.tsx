@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Modal from '../../../components/model'; // Assuming you have a Modal component
-import "../../styles/comp.css"
+import "../../../styles/comp.css"
 
 const TimerPage = () => {
   const router = useRouter();
