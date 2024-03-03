@@ -1,8 +1,9 @@
 'use client'
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { Fragment } from 'react';
 import styles from './page.module.css'; // Ensure you have this CSS module file for additional styling
 
-interface StyleOptions {
+interface StyleOptions {    
   backgroundColor: string;
   fontColor: string;
   fontFamily: string;
@@ -16,9 +17,23 @@ const Page: React.FC = () => {
     backgroundColor: '#FFFFFF', // default background color
     fontColor: '#000000',       // default font color
     fontFamily: 'OpenDyslexic', // replace with your dyslexic font name
-    fontSize: '16px',           // default font size
+    fontSize: '20px',           // default font size
     lineSpacing: '1.6',         // default line spacing
   });
+
+  const renderTextWithBoldFirstLetters = (text: string) => {
+    return (
+      <span>
+        {text.toLowerCase().split(' ').map((word, index) => (
+          <Fragment key={`first-letter-${index}`}>
+            {index !== 0 && <span style={{ marginRight: '4px' }}></span>}
+            <strong>{word.charAt(0)}</strong>{word.slice(1)}{' '}
+          </Fragment>
+        ))}
+      </span>
+    );
+  };
+  
 
   // You can add more options as needed
   const backgroundOptions = ['#FFFFFF', '#F8DE7E', '#D1E231', '#99C794', '#5BC0EB', '#65737E'];
@@ -90,16 +105,17 @@ const Page: React.FC = () => {
       </div>
 
       <div
-        className={styles.textOutput}
+        className={styles.textOutput}   
         style={{
-          backgroundColor: styleOptions.backgroundColor,
-          color: styleOptions.fontColor,
-          fontFamily: styleOptions.fontFamily,
-          fontSize: styleOptions.fontSize,
-          lineHeight: styleOptions.lineSpacing
+            backgroundColor: styleOptions.backgroundColor,
+            color: styleOptions.fontColor,
+            fontFamily: styleOptions.fontFamily,
+            fontSize: styleOptions.fontSize,
+            lineHeight: styleOptions.lineSpacing
         }}
+        
       >
-        {inputText}
+        {renderTextWithBoldFirstLetters(inputText)}
       </div>
     </div>
   );
