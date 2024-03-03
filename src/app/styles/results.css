@@ -1,0 +1,36 @@
+/* results.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .results {
+    margin-top: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  .answer {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .answer p {
+    margin-bottom: 5px;
+  }
+  
+  .answer strong {
+    font-weight: bold;
+  }
+  
