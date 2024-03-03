@@ -1,12 +1,36 @@
+'use client'
 import Image from "next/image";
 import "./globals.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+
+import { useState, FormEvent } from 'react';
+
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(true);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setShowModal(false); // Hide modal on form submission
+    
+    // Implement further actions here, like form validation or data submission
+    const formData = new FormData(event.currentTarget)
+    const email = formData.get('email')
+    const name = formData.get('name')
+    const age = formData.get('age')
+
+    const response = await fetch('/api', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, name, age }),
+    })
+  };
+
   return (
+    
     <main className="flex min-h-screen flex-col items-center justify-between p-10">
-      
-      
-      
+  
+              
       <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="pointer-events-none flex place-items-center lg:pointer-events-auto lg:p-0"
@@ -38,22 +62,6 @@ export default function Home() {
       
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        {/* <a
-          href="/text"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a> */}
 
         <a
           href="/text"
@@ -106,6 +114,37 @@ export default function Home() {
           </p>
         </a>
       </div>
+      {showModal && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-70 z-40 flex justify-center items-center">
+          
+          <div className="bg-white bg-opacity-90 rounded-lg overflow-hidden shadow-xl transform transition-all w-3/4 h-3/4 max-w-4xl p-6 align-middle relative">
+          <center>
+          <h1 className="text-xl font-medium mb-4">Welcome to Remedi</h1>
+          <h2 className="text-xl font-medium mb-4">We'd like to know you a little better before you try us out</h2>
+          </center>
+          
+            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" name="email" id="email" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" name="name" id="name" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Your name" />
+              </div>
+              <div>
+                <label htmlFor="age" className="block text-sm font-medium text-gray-700">Age</label>
+                <input type="number" name="age" id="age" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Your age" />
+              </div>
+              <div>
+                <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
