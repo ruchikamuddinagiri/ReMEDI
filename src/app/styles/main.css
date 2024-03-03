@@ -1,28 +1,37 @@
-/* styles/index.module.css */
-
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .button {
-    padding: 10px 20px;
-    background-color: #0070f3;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .button:hover {
-    background-color: #0053b3;
-  }
-  
-  
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center; /* Center-align text */
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px; /* Add space at the top */
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0053b3;
+}
+
+.exerciseExplanation {
+  margin-top: 20px; /* Add space between buttons and explanation */
+  font-size: 1.5rem; /* Font size for better readability */
+  line-height: 1.6; /* Increased line height for better readability */
+}
+
+.exerciseExplanation2 {
+  margin-top: 20px; /* Add space between buttons and explanation */
+  font-size: 1.4rem; /* Font size for better readability */
+  line-height: 1.9; /* Increased line height for better readability */
+}

@@ -42,8 +42,8 @@ const TimerPage = () => {
   return (
     <div className="container">
       <h1>Welcome to the Easy Comprehension!</h1>
-      <p>The Moon lights up our night sky. It goes around the Earth. We see the Moon because the Sun shines on it. The Moon does not make its own light. Sometimes the Moon looks round, and sometimes it looks like part of it is missing</p>
-      <p>Seconds Elapsed: {secondsElapsed}</p>
+      <p  className="text-box">The Moon lights up our night sky. It goes around the Earth. We see the Moon because the Sun shines on it. The Moon does not make its own light. Sometimes the Moon looks round, and sometimes it looks like part of it is missing</p>
+      <p className="timer">Seconds Elapsed: {secondsElapsed}</p>
       {showModal && (
         <Modal onClose={handleModalClose} />
       )}
