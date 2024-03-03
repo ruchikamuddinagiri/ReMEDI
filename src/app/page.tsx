@@ -50,7 +50,7 @@ export default function Home() {
   return (
     
     <main className="flex min-h-screen flex-col items-center justify-between p-10">
-      <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+      <div className="flex items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none mb-[-20px]">
           <a
             className="pointer-events-none flex place-items-center lg:pointer-events-auto lg:p-0"
             href="/"
@@ -60,20 +60,21 @@ export default function Home() {
               src="/logo1.png"
               alt="ReMEDI Logo"
               className="dark:invert"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               priority
             />
           </a>
           
         </div>
-        <p style={{ color: 'black', fontSize: '120px', fontWeight: 'bold', marginBottom: '0' }}>ReMEDI</p>
+        <p style={{ color: 'black', fontSize: '120px', fontWeight: 'bold', marginBottom: '0',marginTop: '-40px' }}>ReMEDI</p>
         <center>
         <div className="z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-2 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        <p className="mt-[-100px] flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-4 pt-2 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-2xl">
           Reading Made Easy For Dyslexic Individuals&nbsp;
           {/* <code className="font-bold">src/app/page.tsx</code> */}
         </p>
+
         
       </div>
         </center>

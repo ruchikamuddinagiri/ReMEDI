@@ -3,8 +3,8 @@ import Link from 'next/link';
 const Header = () => {
     return (
       <header style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem', backgroundColor: '#333', color: '#fff' }}>
-        <img src="/logo.png" alt="ReMEDI Logo" style={{ height: '50px'}} />
-        <div style={{ fontSize: '1.5rem' }}>ReMEDI</div>
+        <img src="/logo.png" alt="ReMEDI Logo" style={{ height: '20px'}} />
+        <div style={{ fontSize: '1.5rem' }}></div>
         <nav>
           <ul style={{ listStyle: 'none', display: 'flex', gap: '20px' }}>
             <li>
