@@ -15,15 +15,24 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+/* styles/globals.css */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('/fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background: pink;
+  font-family: 'OpenDyslexic', sans-serif;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
