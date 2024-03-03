@@ -138,7 +138,7 @@ export default function Home() {
           <div className="bg-white bg-opacity-90 rounded-lg overflow-hidden shadow-xl transform transition-all w-3/4 h-3/4 max-w-4xl p-6 align-middle relative">
           <center>
           <h1 className="text-xl font-medium mb-4">Welcome to Remedi</h1>
-          <h2 className="text-xl font-medium mb-4">We'd like to know you a little better before you try us out</h2>
+          <h2 className="text-xl font-medium mb-4">We&apos;d like to know you a little better before you try us out</h2>
           </center>
           
             <form onSubmit={handleSubmit} className="mt-8 space-y-6">

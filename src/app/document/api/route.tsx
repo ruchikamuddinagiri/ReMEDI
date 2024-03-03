@@ -6,16 +6,16 @@ export async function POST(request: Request){
     const { file, fileType, fileName }  = await request.json()
 
     const s3 = new AWS.S3({
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        region: process.env.AWS_REGION,
+        accessKeyId: process.env.ACCESS_KEY_ID,
+        secretAccessKey: process.env.SECRET_ACCESS_KEY,
+        region: process.env.REGION,
       });
 
 
     // Convert base64 string to a buffer
     const buffer = Buffer.from(file.replace(/^data:\w+\/\w+;base64,/, ''), 'base64');
     const params = {
-        Bucket: process.env.AWS_BUCKET_NAME!,
+        Bucket: process.env.BUCKET_NAME!,
         Key: fileName,
         Body: buffer,
         ContentType: fileType, // Adjust based on your file type
