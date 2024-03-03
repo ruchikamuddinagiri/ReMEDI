@@ -7,7 +7,7 @@ import "../../../styles/comp.css"
 
 const TimerPage = () => {
   const router = useRouter();
-  const [secondsElapsed, setSecondsElapsed] = useState(30);
+  const [secondsElapsed, setSecondsElapsed] = useState(5);
   const [showModal, setShowModal] = useState(false);
 
   // Start the timer when the component mounts
@@ -33,7 +33,7 @@ const TimerPage = () => {
   const handleModalClose = (continueReading: boolean) => {
     setShowModal(false);
     if (continueReading) {
-      setSecondsElapsed(30); // Reset timer
+      setSecondsElapsed(5); // Reset timer
     } else {
       router.push('/pages/easy'); // Navigate to quiz page
     }

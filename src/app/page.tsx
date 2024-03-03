@@ -48,6 +48,8 @@ export default function Home() {
   };
 
   return (
+
+    
     
     <main className="flex min-h-screen flex-col items-center justify-between p-10">
       <div className="flex items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none mb-[-20px]">
@@ -67,6 +69,7 @@ export default function Home() {
           </a>
           
         </div>
+        
         <p style={{ color: 'black', fontSize: '120px', fontWeight: 'bold', marginBottom: '0',marginTop: '-40px' }}>ReMEDI</p>
         <center>
         <div className="z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex">
@@ -117,7 +120,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="/pages"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           
           rel="noopener noreferrer"
